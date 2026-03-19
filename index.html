@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestro Tiempo Juntos</title>
-    <link rel="icon" href="static/imagen/love.png" type="image/png">
+    <link rel="icon" href="love.png" type="image/png">
     <style>
         :root {
             --color-amor: #ff4d6d;
@@ -280,7 +280,7 @@
 
     <div class="qr-section">
         <div class="qr-placeholder">
-            <img src="static/imagen/qr.jpeg" alt="Escanéame">
+            <img src="qr.jpeg" alt="Escanéame">
         </div>
         <p class="qr-text">📸 Escanea esto, tengo algo para ti...</p>
     </div>
@@ -299,7 +299,6 @@
 
 <script>
     const fechaInicio = new Date(2025, 3, 20, 10, 30, 0); 
-    const folder = "static/imagen/";
 
     const album = [
         { img: "1.jpeg", texto: "Navegando juntos, porque contigo cualquier destino es el correcto 🛶✨" },
@@ -324,13 +323,13 @@
         imgEl.style.opacity = 0;
         setTimeout(() => {
             index = (index + 1) % album.length;
-            imgEl.src = folder + album[index].img;
+            imgEl.src = album[index].img;
             txtEl.innerText = album[index].texto;
             imgEl.style.opacity = 1;
         }, 800);
     }
 
-    imgEl.src = folder + album[0].img;
+    imgEl.src = album[0].img;
     txtEl.innerText = album[0].texto;
     setInterval(updateGallery, 5000);
 
